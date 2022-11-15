@@ -1,17 +1,28 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { About, Experience, Header, Home, Skills } from './components';
+import {
+  About,
+  Contact,
+  Experience,
+  Footer,
+  Header,
+  Home,
+  Portfolio,
+  Skills,
+} from './components';
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <main>
+      <main className="main">
         <Home />
         <About />
         <Skills />
         <Experience />
+        <Portfolio />
+        <Contact />
       </main>
+      <Footer />
     </div>
   );
 }

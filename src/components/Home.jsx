@@ -29,7 +29,7 @@ const Home = () => {
             </SocialLink>
             <SocialLink
               target="_blank"
-              href="https://linkedin.com/trannguyenvu3482"
+              href="https://linkedin.com/in/trannguyenvu3482"
             >
               <UilLinkedin className="link-icon" />
             </SocialLink>
