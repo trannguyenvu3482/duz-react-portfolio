@@ -5,6 +5,7 @@ import {
   UilLinkedin,
   UilMessage,
 } from '@iconscout/react-unicons';
+import { UisCheckCircle } from '@iconscout/react-unicons-solid';
 import React from 'react';
 import ReactTypingEffect from 'react-typing-effect';
 import styled from 'styled-components';
@@ -46,7 +47,7 @@ const Home = () => {
                   <h4 style={{ color: '#666' }}>{cursor}</h4>
                 )}
               />
-              <img src={HandSVG} alt="" className="hand-img" />
+              <UisCheckCircle className="hand-img" />
             </h1>
             <h3 className="subtitle">Frontend Developer</h3>
             <p className="description">
@@ -167,6 +168,7 @@ const Data = styled.div`
     width: 38px;
     height: 38px;
     margin-left: 1rem;
+    color: #1da1f2;
 
     @media screen and (max-width: 992px) {
       width: 26px;

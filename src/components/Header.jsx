@@ -40,6 +40,12 @@ const Header = ({ props }) => {
               </MenuLink>
             </MenuItem>
             <MenuItem>
+              <MenuLink href="#experience">
+                <UilSuitcase />
+                Experience
+              </MenuLink>
+            </MenuItem>
+            <MenuItem>
               <MenuLink href="#portfolio">
                 <UilScenery />
                 Portfolio
@@ -49,15 +55,6 @@ const Header = ({ props }) => {
               <MenuLink href="#contact">
                 <UilMessage />
                 Contact
-              </MenuLink>
-            </MenuItem>
-            <MenuItem>
-              <MenuLink
-                target="_blank"
-                href="https://www.topcv.vn/xem-cv/V1wNBQ0GCFFQUQ9aUgAGUgENDwYADFACV1RaAQe4d3"
-              >
-                <UilSuitcase />
-                My CV
               </MenuLink>
             </MenuItem>
           </MenuList>

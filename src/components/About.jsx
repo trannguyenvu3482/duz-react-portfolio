@@ -52,7 +52,6 @@ const About = () => {
 };
 
 const Wrapper = styled.section`
-  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
