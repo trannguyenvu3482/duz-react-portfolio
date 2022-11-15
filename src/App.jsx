@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import About from './components/About';
-import Header from './components/Header';
-import Home from './components/Home';
+import { About, Header, Home, Skills } from './components';
+
 function App() {
   return (
     <div className="App">
@@ -10,6 +9,7 @@ function App() {
       <main>
         <Home />
         <About />
+        <Skills />
       </main>
     </div>
   );
