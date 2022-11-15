@@ -18,6 +18,10 @@ const Portfolio = () => {
     setCategory(category);
   };
 
+  const handleNavigation = (link) => {
+    window.open(link);
+  };
+
   return (
     <Wrapper className="section" id="portfolio">
       <h2 className="section__title">Portfolio</h2>
@@ -41,10 +45,13 @@ const Portfolio = () => {
         <Content className="container grid">
           {projects.map((item, index) => {
             return (
-              <WorkItem key={item.id}>
+              <WorkItem
+                key={item.id}
+                onClick={() => handleNavigation(item.link)}
+              >
                 <img src={item.image} alt={item.title} />
                 <h3>{item.title}</h3>
-                <a href="#">
+                <a target="_blank" href={item.link}>
                   Demo <box-icon name="right-arrow-alt"></box-icon>
                 </a>
               </WorkItem>
@@ -110,6 +117,13 @@ const WorkItem = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 1.25rem;
   border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+  }
 
   img {
     width: 295px;

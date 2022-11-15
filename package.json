@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.9.1",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/react-unicons-solid": "^0.0.3",
     "boxicons": "^2.1.4",

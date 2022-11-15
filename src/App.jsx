@@ -7,6 +7,7 @@ import {
   Header,
   Home,
   Portfolio,
+  ScrollToTop,
   Skills,
 } from './components';
 
@@ -22,6 +23,8 @@ function App() {
         <Portfolio />
         <Contact />
       </main>
+
+      <ScrollToTop />
       <Footer />
     </div>
   );

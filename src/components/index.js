@@ -5,6 +5,17 @@ import Footer from './Footer';
 import Header from './Header';
 import Home from './Home';
 import Portfolio from './Portfolio';
+import ScrollToTop from './ScrollToTop';
 import Skills from './Skills';
 
-export { About, Header, Home, Skills, Experience, Portfolio, Contact, Footer };
+export {
+  About,
+  Header,
+  Home,
+  Skills,
+  Experience,
+  Portfolio,
+  Contact,
+  Footer,
+  ScrollToTop,
+};

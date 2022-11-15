@@ -86,7 +86,7 @@ const Experience = () => {
           <Content active={activeTab === 1}>
             <Data>
               <Info>
-                <h3 className="title">Internship</h3>
+                <h3 className="title">Student</h3>
                 <span className="subtitle">Industrial University of HCMC</span>
                 <div className="calendar">
                   <box-icon name="calendar" type="solid"></box-icon>

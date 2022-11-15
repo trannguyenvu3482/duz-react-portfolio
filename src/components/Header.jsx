@@ -14,45 +14,95 @@ import styled from 'styled-components';
 
 const Header = ({ props }) => {
   const [toggle, setToggle] = useState(false);
+  const [header, setHeader] = useState(true);
+  const [activeNav, setActiveNav] = useState('#home');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 80) {
+      setHeader(false);
+    } else {
+      setHeader(true);
+    }
+  });
+
+  window.addEventListener('scroll', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const scrollY = window.pageYOffset;
+
+    sections.forEach((current) => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 50;
+      const sectionId = current.getAttribute('id');
+
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        setActiveNav(`#${sectionId}`);
+      }
+    });
+  });
+
   return (
-    <Wrapper>
+    <Wrapper active={header}>
       <Container>
         <Logo href="#">Vu Tran</Logo>
 
         <Menu active={toggle}>
           <MenuList>
             <MenuItem>
-              <MenuLink href="#home">
+              <MenuLink
+                href="#home"
+                active={activeNav === '#home'}
+                onClick={() => setActiveNav('#home')}
+              >
                 <UilEstate className="link-icon" />
                 Home
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="#about">
+              <MenuLink
+                href="#about"
+                active={activeNav === '#about'}
+                onClick={() => setActiveNav('#about')}
+              >
                 <UilUser />
                 About
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="#skills">
+              <MenuLink
+                href="#skills"
+                active={activeNav === '#skills'}
+                onClick={() => setActiveNav('#skills')}
+              >
                 <UilFileAlt />
                 Skills
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="#experience">
+              <MenuLink
+                href="#experience"
+                active={activeNav === '#experience'}
+                onClick={() => setActiveNav('#experience')}
+              >
                 <UilSuitcase />
                 Experience
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="#portfolio">
+              <MenuLink
+                href="#portfolio"
+                active={activeNav === '#portfolio'}
+                onClick={() => setActiveNav('#portfolio')}
+              >
                 <UilScenery />
                 Portfolio
               </MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="#contact">
+              <MenuLink
+                href="#contact"
+                active={activeNav === '#contact'}
+                onClick={() => setActiveNav('#contact')}
+              >
                 <UilMessage />
                 Contact
               </MenuLink>
@@ -77,6 +127,8 @@ const Wrapper = styled.header`
   left: 0;
   z-index: var(--z-fixed);
   background-color: var(--body-color);
+  box-shadow: ${({ active }) =>
+    active ? 'none' : '0 0 10px rgba(0, 0, 0, 0.1)'};
 
   @media screen and (max-width: 768px) {
     top: initial;
@@ -150,8 +202,9 @@ const MenuLink = styled.a`
   flex-direction: column;
   align-items: center;
   font-size: var(--small-font-size);
-  color: var(--title-color);
-  opacity: 0.5;
+  color: ${({ active }) =>
+    active ? 'var(--title-color-dark)' : 'var(--title-color)'};
+  opacity: ${({ active }) => (active ? '1' : '0.5')};
   font-weight: var(--font-medium);
   transition: 0.3s;
 
