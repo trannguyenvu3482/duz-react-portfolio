@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
 import { UilMessage } from '@iconscout/react-unicons';
 import React, { useRef } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components';
 
 const Contact = () => {
@@ -20,98 +21,93 @@ const Contact = () => {
   };
 
   return (
-    <Wrapper className="section" id="contact">
-      <h2 className="section__title">Contact</h2>
-      <span className="section__subtitle">
-        Contact me for more information!
-      </span>
-
-      <Container className="container grid">
-        <Content>
-          <h3 className="title">Talk to me</h3>
-
-          <Info>
-            <Card>
-              <box-icon name="envelope" type="solid"></box-icon>
-              <h3 className="card-title">Email</h3>
-              <span className="card-data">trannguyenvu3482@gmail.com</span>
-              <a
-                href="mailto:trannguyenvu3482@gmail.com"
-                className="contact-btn"
+    <Fade triggerOnce>
+      <Wrapper className="section" id="contact">
+        <h2 className="section__title">Contact</h2>
+        <span className="section__subtitle">
+          Contact me for more information!
+        </span>
+        <Container className="container grid">
+          <Content>
+            <h3 className="title">Talk to me</h3>
+            <Info>
+              <Card>
+                <box-icon name="envelope" type="solid"></box-icon>
+                <h3 className="card-title">Email</h3>
+                <span className="card-data">trannguyenvu3482@gmail.com</span>
+                <a
+                  href="mailto:trannguyenvu3482@gmail.com"
+                  className="contact-btn"
+                >
+                  Email me <box-icon name="right-arrow-alt"></box-icon>
+                </a>
+              </Card>
+              <Card>
+                <box-icon name="phone-call" type="solid"></box-icon>
+                <h3 className="card-title">Phone No</h3>
+                <span className="card-data">(+84) 903252508</span>
+                <a href="tel:+84903252508" className="contact-btn">
+                  Call me <box-icon name="right-arrow-alt"></box-icon>
+                </a>
+              </Card>
+              <Card>
+                <box-icon name="messenger" type="logo"></box-icon>
+                <h3 className="card-title">Messenger</h3>
+                <span className="card-data">https://m.me/DuzFromSOL</span>
+                <a
+                  target="_blank"
+                  href="https://m.me/DuzFromSOL"
+                  className="contact-btn"
+                >
+                  Text me <box-icon name="right-arrow-alt"></box-icon>
+                </a>
+              </Card>
+            </Info>
+          </Content>
+          <Content>
+            <h3 className="title">Send me a message!</h3>
+            <Form ref={form} onSubmit={sendEmail}>
+              <div className="form-field">
+                <label className="form-label">Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  className="form-input"
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="form-field">
+                <label className="form-label">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  className="form-input"
+                  placeholder="Your email"
+                />
+              </div>
+              <div className="form-field form-textarea">
+                <label className="form-label">Your message</label>
+                <textarea
+                  name="message"
+                  className="form-input"
+                  cols="30"
+                  rows="10"
+                  placeholder="Write your message here"
+                ></textarea>
+              </div>
+              <button
+                href="#contact"
+                type="submit"
+                className="button button--flex"
               >
-                Email me <box-icon name="right-arrow-alt"></box-icon>
-              </a>
-            </Card>
-
-            <Card>
-              <box-icon name="phone-call" type="solid"></box-icon>
-              <h3 className="card-title">Phone No</h3>
-              <span className="card-data">(+84) 903252508</span>
-              <a href="tel:+84903252508" className="contact-btn">
-                Call me <box-icon name="right-arrow-alt"></box-icon>
-              </a>
-            </Card>
-
-            <Card>
-              <box-icon name="messenger" type="logo"></box-icon>
-              <h3 className="card-title">Messenger</h3>
-              <span className="card-data">https://m.me/DuzFromSOL</span>
-              <a
-                target="_blank"
-                href="https://m.me/DuzFromSOL"
-                className="contact-btn"
-              >
-                Text me <box-icon name="right-arrow-alt"></box-icon>
-              </a>
-            </Card>
-          </Info>
-        </Content>
-
-        <Content>
-          <h3 className="title">Send me a message!</h3>
-
-          <Form ref={form} onSubmit={sendEmail}>
-            <div className="form-field">
-              <label className="form-label">Name</label>
-              <input
-                type="text"
-                name="name"
-                className="form-input"
-                placeholder="Your name"
-              />
-            </div>
-            <div className="form-field">
-              <label className="form-label">Email</label>
-              <input
-                type="email"
-                name="email"
-                className="form-input"
-                placeholder="Your email"
-              />
-            </div>
-            <div className="form-field form-textarea">
-              <label className="form-label">Your message</label>
-              <textarea
-                name="message"
-                className="form-input"
-                cols="30"
-                rows="10"
-                placeholder="Write your message here"
-              ></textarea>
-            </div>
-
-            <button
-              href="#contact"
-              type="submit"
-              className="button button--flex"
-            >
-              Send message
-              <UilMessage size="20" className="contact-btn-icon" />
-            </button>
-          </Form>
-        </Content>
-      </Container>
-    </Wrapper>
+                Send message
+                <UilMessage size="20" className="contact-btn-icon" />
+              </button>
+            </Form>
+          </Content>
+        </Container>
+      </Wrapper>
+    </Fade>
   );
 };
 

@@ -4,50 +4,54 @@ import {
   UilScenery,
   UilSuitcase,
 } from '@iconscout/react-unicons';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import AboutImg from '../assets/about.jpg';
-import CV from '../assets/John-Cv.pdf';
+
 const About = () => {
   return (
-    <Wrapper className="section" id="about">
-      <h2 className="section__title">About Me</h2>
-      <span className="section__subtitle">My Introduction</span>
-      <Container className="container grid">
-        <img src={AboutImg} alt="about-image" />
-
-        <AboutData>
-          <Info className="grid">
-            <InfoBox>
-              <UilAward className="about-icon" />
-              <h3 className="about-title">Experience</h3>
-              <span className="about-subtitle">1+ Year Studying</span>
-            </InfoBox>
-            <InfoBox>
-              <UilScenery className="about-icon" />
-              <h3 className="about-title">Completed</h3>
-              <span className="about-subtitle">10+ Projects</span>
-            </InfoBox>
-            <InfoBox>
-              <UilSuitcase className="about-icon" />
-              <h3 className="about-title">Status</h3>
-              <span className="about-subtitle">Available For Work</span>
-            </InfoBox>
-          </Info>
-
-          <p className="about-description">
-            Frontend developer, I create web pages with UI / UX user interface,
-            I have years of experience and many clients are happy with the
-            projects carried out.
-          </p>
-
-          <a href={CV} className="button button--flex">
-            Download my CV
-            <UilFileDownloadAlt />
-          </a>
-        </AboutData>
-      </Container>
-    </Wrapper>
+    <Fade triggerOnce>
+      <Wrapper className="section" id="about">
+        <h2 className="section__title">About Me</h2>
+        <span className="section__subtitle">My Introduction</span>
+        <Container className="container grid">
+          <img src={AboutImg} alt="about-image" />
+          <AboutData>
+            <Info className="grid">
+              <InfoBox>
+                <UilAward className="about-icon" />
+                <h3 className="about-title">Experience</h3>
+                <span className="about-subtitle">1+ Year Studying</span>
+              </InfoBox>
+              <InfoBox>
+                <UilScenery className="about-icon" />
+                <h3 className="about-title">Completed</h3>
+                <span className="about-subtitle">10+ Projects</span>
+              </InfoBox>
+              <InfoBox>
+                <UilSuitcase className="about-icon" />
+                <h3 className="about-title">Status</h3>
+                <span className="about-subtitle">Available For Work</span>
+              </InfoBox>
+            </Info>
+            <p className="about-description">
+              Frontend developer, I create web pages with UI / UX user
+              interface, I have years of experience and many clients are happy
+              with the projects carried out.
+            </p>
+            <a
+              target="_blank"
+              href="https://www.topcv.vn/xem-cv/V1wNBQ0GCFFQUQ9aUgAGUgENDwYADFACV1RaAQe4d3"
+              className="button button--flex"
+            >
+              Download my CV
+              <UilFileDownloadAlt />
+            </a>
+          </AboutData>
+        </Container>
+      </Wrapper>
+    </Fade>
   );
 };
 

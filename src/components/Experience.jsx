@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Slide } from 'react-awesome-reveal';
 import styled from 'styled-components';
 
 const Experience = () => {
@@ -31,57 +32,61 @@ const Experience = () => {
 
         <Qualifications>
           <Content active={activeTab === 0}>
-            <Data>
-              <Info>
-                <h3 className="title">Frontend Developer</h3>
-                <span className="subtitle">
-                  Fullstack Technology Education JSC
-                </span>
-                <div className="calendar">
-                  <box-icon name="calendar" type="solid"></box-icon>
-                  2021-Present
+            <Slide triggerOnce cascade>
+              <Data>
+                <Info>
+                  <h3 className="title">Frontend Developer</h3>
+                  <span className="subtitle">
+                    Fullstack Technology Education JSC
+                  </span>
+                  <div className="calendar">
+                    <box-icon name="calendar" type="solid"></box-icon>
+                    2021-Present
+                  </div>
+                </Info>
+
+                <div>
+                  <span className="rounder"></span>
+                  <div className="line"></div>
                 </div>
-              </Info>
+              </Data>
 
-              <div>
-                <span className="rounder"></span>
-                <div className="line"></div>
-              </div>
-            </Data>
-
-            <Data>
-              <div></div>
-              <div>
-                <span className="rounder"></span>
-                <div className="line"></div>
-              </div>
-              <Info>
-                <h3 className="title">Backend Developer</h3>
-                <span className="subtitle">
-                  Fullstack Technology Education JSC
-                </span>
-                <div className="calendar">
-                  <box-icon name="calendar" type="solid"></box-icon>
-                  2022-Present
+              <Data>
+                <div></div>
+                <div>
+                  <span className="rounder"></span>
+                  <div className="line"></div>
                 </div>
-              </Info>
-            </Data>
+                <Info>
+                  <h3 className="title">Backend Developer</h3>
+                  <span className="subtitle">
+                    Fullstack Technology Education JSC
+                  </span>
+                  <div className="calendar">
+                    <box-icon name="calendar" type="solid"></box-icon>
+                    2022-Present
+                  </div>
+                </Info>
+              </Data>
 
-            <Data>
-              <Info>
-                <h3 className="title">Software Engineering</h3>
-                <span className="subtitle">Industrial University of HCMC</span>
-                <div className="calendar">
-                  <box-icon name="calendar" type="solid"></box-icon>
-                  2021-Present
+              <Data>
+                <Info>
+                  <h3 className="title">Software Engineering</h3>
+                  <span className="subtitle">
+                    Industrial University of HCMC
+                  </span>
+                  <div className="calendar">
+                    <box-icon name="calendar" type="solid"></box-icon>
+                    2021-Present
+                  </div>
+                </Info>
+
+                <div>
+                  <span className="rounder"></span>
+                  <div className="line"></div>
                 </div>
-              </Info>
-
-              <div>
-                <span className="rounder"></span>
-                <div className="line"></div>
-              </div>
-            </Data>
+              </Data>
+            </Slide>
           </Content>
           <Content active={activeTab === 1}>
             <Data>

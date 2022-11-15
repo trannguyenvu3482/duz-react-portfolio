@@ -10,10 +10,13 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.9.1",
+    "@emotion/react": "^11.10.5",
     "@iconscout/react-unicons": "^1.1.6",
     "@iconscout/react-unicons-solid": "^0.0.3",
+    "aos": "^2.3.4",
     "boxicons": "^2.1.4",
     "react": "^18.2.0",
+    "react-awesome-reveal": "^4.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.3",
     "react-typing-effect": "^2.0.5",

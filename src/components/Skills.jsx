@@ -1,19 +1,22 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { Slide } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import BackendSkills from './BackendSkills';
 import FrontendSkills from './FrontendSkills';
 
 const Skills = () => {
   return (
-    <Wrapper className="section" id="skills">
-      <h2 className="section__title">Skills</h2>
-      <span className="section__subtitle">My Technical Level</span>
+    <Slide triggerOnce>
+      <Wrapper className="section" id="skills">
+        <h2 className="section__title">Skills</h2>
+        <span className="section__subtitle">My Technical Level</span>
 
-      <Container className="container grid">
-        <FrontendSkills />
-        <BackendSkills />
-      </Container>
-    </Wrapper>
+        <Container className="container grid">
+          <FrontendSkills />
+          <BackendSkills />
+        </Container>
+      </Wrapper>
+    </Slide>
   );
 };
 

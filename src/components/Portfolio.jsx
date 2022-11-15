@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Bounce } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import { projectsData, projectsNav } from '../data/projectsData';
 
@@ -23,43 +24,43 @@ const Portfolio = () => {
   };
 
   return (
-    <Wrapper className="section" id="portfolio">
-      <h2 className="section__title">Portfolio</h2>
-      <span className="section__subtitle">Most recent works</span>
-
-      <Container>
-        <Filters>
-          {projectsNav.map((item, index) => {
-            return (
-              <FilterButton
-                active={category === item.title}
-                key={index}
-                onClick={() => handleFilterChange(item.title)}
-              >
-                {item.name}
-              </FilterButton>
-            );
-          })}
-        </Filters>
-
-        <Content className="container grid">
-          {projects.map((item, index) => {
-            return (
-              <WorkItem
-                key={item.id}
-                onClick={() => handleNavigation(item.link)}
-              >
-                <img src={item.image} alt={item.title} />
-                <h3>{item.title}</h3>
-                <a target="_blank" href={item.link}>
-                  Demo <box-icon name="right-arrow-alt"></box-icon>
-                </a>
-              </WorkItem>
-            );
-          })}
-        </Content>
-      </Container>
-    </Wrapper>
+    <Bounce triggerOnce>
+      <Wrapper className="section" id="portfolio">
+        <h2 className="section__title">Portfolio</h2>
+        <span className="section__subtitle">Most recent works</span>
+        <Container>
+          <Filters>
+            {projectsNav.map((item, index) => {
+              return (
+                <FilterButton
+                  active={category === item.title}
+                  key={index}
+                  onClick={() => handleFilterChange(item.title)}
+                >
+                  {item.name}
+                </FilterButton>
+              );
+            })}
+          </Filters>
+          <Content className="container grid">
+            {projects.map((item, index) => {
+              return (
+                <WorkItem
+                  key={item.id}
+                  onClick={() => handleNavigation(item.link)}
+                >
+                  <img src={item.image} alt={item.title} />
+                  <h3>{item.title}</h3>
+                  <a target="_blank" href={item.link}>
+                    Demo <box-icon name="right-arrow-alt"></box-icon>
+                  </a>
+                </WorkItem>
+              );
+            })}
+          </Content>
+        </Container>
+      </Wrapper>
+    </Bounce>
   );
 };
 
