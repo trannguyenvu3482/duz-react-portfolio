@@ -7,7 +7,6 @@ import {
 import React, { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components';
-import AboutImg from '../assets/about.jpg';
 import AnhThe from '../assets/AnhThe.jpg';
 
 const About = () => {
