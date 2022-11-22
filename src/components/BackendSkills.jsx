@@ -58,7 +58,7 @@ const BackendSkills = () => {
 
             <div className="skill-info">
               <h3 className="skill-name">MS SQL</h3>
-              <span className="skill-level">Basic</span>
+              <span className="skill-level">Intermediate</span>
             </div>
           </SkillData>
         </SkillGroup>

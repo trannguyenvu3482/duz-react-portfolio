@@ -120,16 +120,25 @@ const WorkItem = styled.div`
   border-radius: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  overflow: hidden;
 
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
+    transform: scale(1.1);
+
+    img {
+      transform: scale(1.24);
+      border-radius: 0;
+    }
   }
 
   img {
     width: 295px;
     border-radius: 1rem;
     margin-bottom: var(--mb-1);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    object-fit: cover;
 
     @media screen and (max-width: 992px) {
       margin-bottom: 0.75rem;

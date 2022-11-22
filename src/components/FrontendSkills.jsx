@@ -58,7 +58,7 @@ const FrontendSkills = () => {
 
             <div className="skill-info">
               <h3 className="skill-name">Redux</h3>
-              <span className="skill-level">Intermediate</span>
+              <span className="skill-level">Basic</span>
             </div>
           </SkillData>
         </SkillGroup>

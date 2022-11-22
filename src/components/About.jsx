@@ -8,6 +8,7 @@ import React, { useEffect } from 'react';
 import { Fade } from 'react-awesome-reveal';
 import styled from 'styled-components';
 import AboutImg from '../assets/about.jpg';
+import AnhThe from '../assets/AnhThe.jpg';
 
 const About = () => {
   return (
@@ -16,7 +17,7 @@ const About = () => {
         <h2 className="section__title">About Me</h2>
         <span className="section__subtitle">My Introduction</span>
         <Container className="container grid">
-          <img src={AboutImg} alt="about-image" />
+          <img src={AnhThe} alt="about-image" />
           <AboutData>
             <Info className="grid">
               <InfoBox>

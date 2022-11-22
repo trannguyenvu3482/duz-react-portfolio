@@ -9,7 +9,6 @@ import {
   UilUser,
 } from '@iconscout/react-unicons';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Header = ({ props }) => {
@@ -25,19 +24,23 @@ const Header = ({ props }) => {
     }
   });
 
-  window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section[id]');
-    const scrollY = window.pageYOffset;
-
-    sections.forEach((current) => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 50;
-      const sectionId = current.getAttribute('id');
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        setActiveNav(`#${sectionId}`);
+  const observerFunc = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        setActiveNav(`#${entry.target.id}`);
       }
     });
+  };
+
+  const observer = new IntersectionObserver(observerFunc, {
+    root: null,
+    threshold: 0.2,
+  });
+
+  const sections = document.querySelectorAll('section');
+
+  sections.forEach((section) => {
+    observer.observe(section);
   });
 
   return (
